@@ -1,8 +1,9 @@
-import 'package:budget_keeper/Models/account.dart';
-import 'package:budget_keeper/View/UI/Components/CustomAppBar/custom_appbar.dart';
-import 'package:budget_keeper/View/UI/Components/MainScreenTitle/main_screen_title.dart';
-import 'package:budget_keeper/View/Screens/UpdateScreen/UpdateScreenBody/update_screen_fields.dart';
 import 'package:flutter/material.dart';
+//My Packages
+import '../../../Models/account.dart';
+import '../../UI/Components/CustomAppBar/custom_appbar.dart';
+import '../../UI/Components/MainScreenTitle/main_screen_title.dart';
+import 'UpdateScreenBody/update_screen_fields.dart';
 
 class UpdateScreen extends StatelessWidget {
   final bool shouldHideActions = true;

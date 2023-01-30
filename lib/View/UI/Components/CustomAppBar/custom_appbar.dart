@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../UI/Components/CustomAppBar/CustomAppBarButtons/back_button.dart';
-import '../../../UI/Components/CustomAppBar/CustomAppBarButtons/new_account_button.dart';
+//My Packages
+import 'CustomAppBarButtons/back_button.dart';
+import 'CustomAppBarButtons/new_account_button.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool shouldHideActions;

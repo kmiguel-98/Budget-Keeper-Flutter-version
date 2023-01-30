@@ -1,9 +1,9 @@
-import 'package:budget_keeper/Models/account.dart';
-import 'package:budget_keeper/View/UI/Components/CustomAppBar/custom_appbar.dart';
-import 'package:budget_keeper/View/UI/ListViews/BudgetListView/ListItemView/budget_list_view.dart';
-import 'package:budget_keeper/View/UI/Components/MainScreenTitle/main_screen_title.dart';
 import 'package:flutter/material.dart';
 //My App Packages
+import '../../../Models/account.dart';
+import '../../UI/Components/CustomAppBar/custom_appbar.dart';
+import '../../UI/Components/MainScreenTitle/main_screen_title.dart';
+import '../../UI/ListViews/BudgetListView/ListItemView/budget_list_view.dart';
 
 class BudgetKeeperHome extends StatefulWidget {
   const BudgetKeeperHome({super.key});

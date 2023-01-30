@@ -1,8 +1,9 @@
-import 'package:budget_keeper/Domain/Service/budget_service.dart';
-import 'package:budget_keeper/Models/account.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:money2/money2.dart';
+// My Packages
+import '../../../../Domain/Service/budget_service.dart';
+import '../../../../Models/account.dart';
 
 class UpdateScreenFields extends StatelessWidget {
   final Currency usd = Currency.create('\$', 2);

@@ -1,5 +1,5 @@
-import 'package:budget_keeper/Models/account.dart';
-import 'package:budget_keeper/Domain/DB/budget_db.dart';
+import '../../Models/account.dart';
+import '../DB/budget_db.dart';
 
 class BudgetKeeperInterface {
   static BudgetDB? _databaseInstance;

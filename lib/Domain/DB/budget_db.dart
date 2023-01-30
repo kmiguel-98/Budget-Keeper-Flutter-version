@@ -2,7 +2,7 @@ import 'package:sqflite/sqflite.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
 //My App packages
-import 'package:budget_keeper/Models/account.dart';
+import '../../Models/account.dart';
 
 class BudgetDB {
   late final BudgetDB instance;
