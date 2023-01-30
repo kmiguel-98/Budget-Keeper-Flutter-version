@@ -1,0 +1,57 @@
+import 'package:budget_keeper/Domain/Service/budget_service.dart';
+import 'package:budget_keeper/Models/account.dart';
+import 'package:budget_keeper/View/UI/ListViews/BudgetListView/ListItemCardView/list_item_card.dart';
+import 'package:flutter/material.dart';
+
+class DismissableItem extends StatelessWidget {
+  final Function() refreshHomeCallBack;
+  final Function() getDataCallBack;
+  final Future Function(Account, BuildContext) navigateToUpdateScreenCallback;
+  final List<Account> accountList;
+  final int index;
+  const DismissableItem(
+      {super.key,
+      required this.index,
+      required this.accountList,
+      required this.getDataCallBack,
+      required this.navigateToUpdateScreenCallback,
+      required this.refreshHomeCallBack});
+
+  @override
+  Widget build(BuildContext context) {
+    final key = ValueKey(accountList[index].id.toString());
+    return Dismissible(
+        key: key,
+        direction: DismissDirection.endToStart,
+        background: const DismissableItemBackground(),
+        onDismissed: (direction) async {
+          await BudgetKeeperInterface.delete(id: accountList[index].id)
+              .then((_) {
+            accountList.removeAt(index);
+            getDataCallBack();
+            refreshHomeCallBack();
+          });
+        },
+        child: ListItemCard(
+            key: key,
+            account: accountList[index],
+            navigateToUpdateScreenCallback: navigateToUpdateScreenCallback));
+  }
+}
+
+class DismissableItemBackground extends StatelessWidget {
+  const DismissableItemBackground({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.red,
+      padding: const EdgeInsets.only(left: 5),
+      child: const Align(
+          alignment: Alignment.centerLeft,
+          child: Icon(Icons.delete, color: Colors.white)),
+    );
+  }
+}
